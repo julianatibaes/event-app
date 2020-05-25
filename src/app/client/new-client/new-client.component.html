@@ -1,0 +1,42 @@
+<div class="event-parent">
+    <h2> NOVO CLIENTE</h2>
+    <form class="event" id="add-form" (ngSubmit)="f.form.valid && save(f)" #f="ngForm" novalidate>
+
+        <mat-form-field class="event-full-width">
+            <mat-label> Nome</mat-label>
+            <input type="text" matInput value="" [(ngModel)]="client.nome" id="model" name="model" #model="ngModel" required  [ngClass]="{ 'is-invalid': f.submitted && model.invalid }">
+            <div *ngIf="f.submitted && model.invalid" class="invalid-feedback">
+                <div *ngIf="model.errors.required">Nome do cliente é obrigatório</div>
+            </div>
+        </mat-form-field>
+
+        <mat-form-field class="event-full-width">
+            <mat-label> Telefone</mat-label>
+            <input type="tel" matInput value="">
+        </mat-form-field>
+
+        <mat-form-field class="event-full-width">
+            <mat-label> E-mail</mat-label>
+            <input type="email" matInput value="">
+        </mat-form-field>
+
+        <mat-form-field class="event-full-width">
+            <mat-label> Insta</mat-label>
+            <input type="url"  matInput value="">
+        </mat-form-field>
+
+
+        <mat-form-field class="event-full-width">
+            <mat-label> Facebook</mat-label>
+            <input type="url" matInput value="">
+        </mat-form-field>
+
+        <mat-form-field class="event-full-width">
+            <mat-label> Observação</mat-label>
+            <input type="text" matInput value="">
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" class="event-full-width">Salvar</button>
+
+    </form>
+</div>

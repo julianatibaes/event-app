@@ -1,0 +1,39 @@
+{
+  "clients": [
+    {
+      "id": 1,
+      "nome": "ana julia",
+      "telefone": "99992222",
+      "email": "ana@gmail.com",
+      "insta": "ana",
+      "facebook": "ana",
+      "observacao": "gosta de vermelho"
+    },
+    {
+      "id": 2,
+      "nome": "ana paula",
+      "telefone": "99993333",
+      "email": "paula@gmail.com",
+      "insta": "paula",
+      "facebook": "paula",
+      "observacao": "gosta de amarelo"
+    },
+    {
+      "id": 3,
+      "nome": "rafael",
+      "telefone": "99994444",
+      "email": "rafael@gmail.com",
+      "insta": "rafael",
+      "facebook": "rafael",
+      "observacao": "gosta de azul"
+    },
+    {
+      "nome": "teste",
+      "id": 4
+    },
+    {
+      "nome": "Ana Paula",
+      "id": 5
+    }
+  ]
+}

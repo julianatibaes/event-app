@@ -1,0 +1,26 @@
+<div>
+    <div class="event-parent">
+        <div class="event">
+            <button mat-raised-button color="primary" routerLink="/new-client" class="event-full-width"> Novo Cliente </button>
+        </div>
+    </div>
+    <div>
+        <ul *ngFor="let client of clients">
+            <mat-card class="client-card">
+                <mat-card-header>
+                        <mat-icon color="primary">person</mat-icon>
+                    {{client.nome}}
+                </mat-card-header>
+                <mat-card-content>
+                    <p><mat-icon>email</mat-icon> {{client.email}}</p>
+                    <p><mat-icon>phone</mat-icon> {{client.telefone}}</p>
+                    <b>Insta: </b>{{client.insta}} <br>
+                    <p>Face: {{client.facebook}}</p>
+                    <p><mat-icon>announcement</mat-icon> {{client.observacao}}</p>
+                </mat-card-content>
+            </mat-card>
+        </ul>
+    </div>
+</div>
+
+

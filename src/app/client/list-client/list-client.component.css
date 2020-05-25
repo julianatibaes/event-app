@@ -1,0 +1,18 @@
+.event-parent{
+    padding: 16px;
+    text-align: left;
+    width:100%;
+  }
+  .event {
+    display: inline-block;
+    position: relative;
+  }
+  
+  .event-full-width {
+    width: 100%;
+  }
+  
+  .client-card {
+    max-width: 400px;
+  }
+  
