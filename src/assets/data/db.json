@@ -17,23 +17,6 @@
       "insta": "paula",
       "facebook": "paula",
       "observacao": "gosta de amarelo"
-    },
-    {
-      "id": 3,
-      "nome": "rafael",
-      "telefone": "99994444",
-      "email": "rafael@gmail.com",
-      "insta": "rafael",
-      "facebook": "rafael",
-      "observacao": "gosta de azul"
-    },
-    {
-      "nome": "teste",
-      "id": 4
-    },
-    {
-      "nome": "Ana Paula",
-      "id": 5
     }
   ]
 }

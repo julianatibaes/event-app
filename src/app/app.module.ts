@@ -23,6 +23,8 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatListModule } from '@angular/material/list';
 
 //components
 import { AppRoutingModule } from './app-routing.module';
@@ -43,6 +45,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'new-client', component: NewClientComponent },
+  { path: 'new-client/:id', component: NewClientComponent },
   { path: 'list-client', component: ListClientComponent },
   { path: 'new-event', component: NewEventComponent },
   { path: 'list-event', component: ListEventComponent },
@@ -88,6 +91,8 @@ const routes: Routes = [
     MatPaginatorModule,
     MatNativeDateModule,
     MatProgressSpinnerModule,
+    MatGridListModule,
+    MatListModule,
     FormsModule
   ],
   providers: [],

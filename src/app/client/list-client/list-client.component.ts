@@ -27,13 +27,9 @@ export class ListClientComponent implements OnInit {
   }
 
  // deleta um item
- delete(client: Client) {
-  this.clientService.delete(client).subscribe(() => {
-    this.getAll();
-  });
-}
-
-
-  
-
+  delete(client: Client) {
+    this.clientService.delete(client).subscribe(() => {
+      this.getAll();
+    });
+  }
 }

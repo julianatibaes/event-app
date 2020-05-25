@@ -1,1 +1,41 @@
-<p>new-event works!</p>
+
+<div class="event-parent">
+    <h2> NOVO EVENTO</h2>
+    <form class="event">
+        <mat-form-field class="event-full-width">
+            <mat-label>Data inicial</mat-label>
+            <input matInput [matDatepicker]="picker">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+    
+        <mat-form-field class="event-full-width">
+            <mat-label>Data final</mat-label>
+            <input matInput [matDatepicker]="picker">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+    
+        <mat-form-field class="event-full-width">
+            <mat-label> Número de pessoas previstas</mat-label>
+            <input type="number" matInput placeholder="Ex: 30">
+        </mat-form-field>
+    
+        <mat-form-field class="event-full-width">
+            <mat-label> Número de pessoas confirmadas</mat-label>
+            <input type="number" matInput placeholder="Ex: 30">
+        </mat-form-field>
+    
+        <mat-form-field class="event-full-width">
+            <mat-label> Descrição</mat-label>
+            <input matInput placeholder="Ex: Festa da Betina" value="">
+        </mat-form-field>
+    
+        <mat-form-field class="event-full-width">
+            <mat-label> Observação</mat-label>
+            <input matInput placeholder="Ex: recepção pelo Atalaia Eventos" value="">
+        </mat-form-field>
+    
+        <button mat-raised-button color="primary" class="event-full-width">Salvar</button>
+    </form>
+</div>

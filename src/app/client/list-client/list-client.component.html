@@ -7,17 +7,44 @@
     <div>
         <ul *ngFor="let client of clients">
             <mat-card class="client-card">
-                <mat-card-header>
-                        <mat-icon color="primary">person</mat-icon>
-                    {{client.nome}}
+                <mat-card-header class="client-header">
+                    <mat-icon color="primary">person</mat-icon>
+                    <span><strong>{{client.nome}}</strong></span>
                 </mat-card-header>
-                <mat-card-content>
-                    <p><mat-icon>email</mat-icon> {{client.email}}</p>
-                    <p><mat-icon>phone</mat-icon> {{client.telefone}}</p>
-                    <b>Insta: </b>{{client.insta}} <br>
-                    <p>Face: {{client.facebook}}</p>
-                    <p><mat-icon>announcement</mat-icon> {{client.observacao}}</p>
+                <mat-card-content >
+                
+                    <mat-grid-list cols="1" rowHeight="26px" >
+                        <mat-grid-tile class="client-grid">
+                            <mat-icon >email</mat-icon>
+                            <span>{{client.email}}</span> 
+                        </mat-grid-tile>
+
+                        <mat-grid-tile class="client-grid">
+                            <mat-icon>phone</mat-icon>
+                            <span>{{client.telefone}}</span> 
+                        </mat-grid-tile>
+
+                        <mat-grid-tile class="client-grid">
+                            <mat-icon>camera</mat-icon>
+                            <span>{{client.insta}}</span> 
+                        </mat-grid-tile>
+
+                        <mat-grid-tile class="client-grid">
+                            <mat-icon>thumb_up_alt</mat-icon>
+                            <span>{{client.facebook}}</span> 
+                        </mat-grid-tile>
+
+                        <mat-grid-tile class="client-grid">
+                            <mat-icon>announcement</mat-icon>
+                            <span>{{client.observacao}}</span> 
+                        </mat-grid-tile>
+                    </mat-grid-list>
+        
                 </mat-card-content>
+                <mat-card-actions>
+                    <button mat-raised-button color="primary" routerLink="../new-client/{{ client.id }}"><mat-icon>edit</mat-icon>Editar</button>
+                    <button mat-raised-button color="accent" (click)="delete(client)"><mat-icon>delete</mat-icon>Excluir</button>
+                  </mat-card-actions>
             </mat-card>
         </ul>
     </div>

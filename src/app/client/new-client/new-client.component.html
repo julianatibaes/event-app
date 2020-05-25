@@ -5,19 +5,25 @@
         <mat-form-field class="event-full-width">
             <mat-label> Nome</mat-label>
             <input type="text" matInput value="" [(ngModel)]="client.nome" id="model" name="model" #model="ngModel" required  [ngClass]="{ 'is-invalid': f.submitted && model.invalid }">
-            <div *ngIf="f.submitted && model.invalid" class="invalid-feedback">
-                <div *ngIf="model.errors.required">Nome do cliente é obrigatório</div>
-            </div>
+            <mat-error *ngIf="f.submitted && model.invalid" class="invalid-feedback">
+                <mat-error *ngIf="model.errors.required">Nome do cliente é obrigatório</mat-error>
+            </mat-error>
         </mat-form-field>
 
         <mat-form-field class="event-full-width">
             <mat-label> Telefone</mat-label>
-            <input type="tel" matInput value="">
+            <input type="tel" matInput value="" [(ngModel)]="client.telefone" id="model" name="model" #model="ngModel" required [ngClass]="{ 'is-invalid': f.submitted && model.invalid }">
+            <mat-error *ngIf="f.submitted && model.invalid" class="invalid-feedback">
+                <mat-error *ngIf="model.errors.required">Telefone do cliente é obrigatório</mat-error>
+            </mat-error>
         </mat-form-field>
 
         <mat-form-field class="event-full-width">
             <mat-label> E-mail</mat-label>
-            <input type="email" matInput value="">
+            <input type="email" matInput value="" [(ngModel)]="client.email" id="model" name="model" #model="ngModel" required [ngClass]="{ 'is-invalid': f.submitted && model.invalid }">
+            <mat-error *ngIf="f.submitted && model.invalid" class="invalid-feedback">
+                <mat-error *ngIf="model.errors.required">E-mail do cliente é obrigatório</mat-error>
+            </mat-error>
         </mat-form-field>
 
         <mat-form-field class="event-full-width">
