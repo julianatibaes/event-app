@@ -1,15 +1,22 @@
 <div class="event-parent">
     <h2> LOGIN</h2>
-    <form class="event">
-        <mat-form-field class="event-full-width">
+    <form class="event" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <mat-form-field class="event-full-width" >
             <mat-label> E-mail</mat-label>
-            <input type="email" matInput placeholder="Ex: email@email.com" value="">
+            <input type="email" matInput placeholder="Ex: email@email.com" value="" 
+            id="loginFormUser" formControlName="username"  required>
         </mat-form-field>
-    
+       
         <mat-form-field class="event-full-width">
             <mat-label> Senha</mat-label>
-            <input type="password" matInput value="">
+            <input type="password" matInput value="" id="loginFormPassword" formControlName="password"  required >
+            
         </mat-form-field>
-        <button mat-raised-button color="primary" class="event-full-width">Acessar</button>
+        <button mat-raised-button color="primary" class="event-full-width" >
+            ACESSAR
+        </button>
+        <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
+                        <hr class="hr-light mb-3 mt-4">
     </form>
+
 </div>

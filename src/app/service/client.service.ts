@@ -9,7 +9,7 @@ import { Client } from '../model/client';
 })
 export class ClientService {
   
-  private url = 'http://localhost:3000/clients';
+  private url = 'http://localhost:8080/responsavel';
 
   constructor(private httpClient: HttpClient) { }
 

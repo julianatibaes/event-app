@@ -1,8 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router'; // adicionar
-import { HttpClientModule } from '@angular/common/http'; // adicionar
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'; // adicionar
 import { FormsModule } from '@angular/forms'; // adicionar
+import { ReactiveFormsModule} from '@angular/forms' // adicionar
+
+import { AuthGaurdService } from './service/auth-gaurd.service'; // adicionar
+import { JwtInterceptor } from './service/jwt-interceptor'; // adicionar
+import { ErrorInterceptor } from './service/error-interceptor '; // adicionar
 
 //material design
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -44,13 +49,13 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'new-client', component: NewClientComponent },
-  { path: 'new-client/:id', component: NewClientComponent },
-  { path: 'list-client', component: ListClientComponent },
-  { path: 'new-event', component: NewEventComponent },
-  { path: 'list-event', component: ListEventComponent },
-  { path: 'new-place', component: NewPlaceComponent },
-  { path: 'list-place', component: ListPlaceComponent },
+  { path: 'new-client', component: NewClientComponent ,canActivate:[AuthGaurdService]},
+  { path: 'new-client/:id', component: NewClientComponent ,canActivate:[AuthGaurdService]},
+  { path: 'list-client', component: ListClientComponent,canActivate:[AuthGaurdService] },
+  { path: 'new-event', component: NewEventComponent ,canActivate:[AuthGaurdService]},
+  { path: 'list-event', component: ListEventComponent ,canActivate:[AuthGaurdService]},
+  { path: 'new-place', component: NewPlaceComponent ,canActivate:[AuthGaurdService]},
+  { path: 'list-place', component: ListPlaceComponent ,canActivate:[AuthGaurdService]},
 ];
 
 @NgModule({
@@ -72,6 +77,7 @@ const routes: Routes = [
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule, // adicionar
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     MatToolbarModule,
     MatMenuModule,
@@ -95,7 +101,10 @@ const routes: Routes = [
     MatListModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent],
   exports: [RouterModule] //adicionar
 })
